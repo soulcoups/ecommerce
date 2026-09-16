@@ -8,11 +8,8 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 
 @Entity
-// substitui  os getters e setters
 @Data
-// substitui o construtor com todos os argumentos
 @AllArgsConstructor
-// substitui o construtor vazio
 @NoArgsConstructor
 public class Pedido {
     @Id
@@ -21,6 +18,8 @@ public class Pedido {
     private Instant momento;
     private StatusPedido status;
     @ManyToOne
-    private Usuario cliente;
+    private Usuario cliente ;
+    @OneToOne(mappedBy = "pedido", cascade = CascadeType.ALL)
+    private Pagamento pagamento;
 
 }

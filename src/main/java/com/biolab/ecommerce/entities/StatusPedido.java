@@ -1,5 +1,9 @@
 package com.biolab.ecommerce.entities;
 
 public enum StatusPedido {
-    CRIANDO_PEDIDO
+    AGUARDANDO_PAGAMENTO,
+    PAGO,
+    ENVIADO,
+    ENTREGUE,
+    CANCELADO
 }

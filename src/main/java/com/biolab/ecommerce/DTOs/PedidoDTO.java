@@ -1,24 +1,22 @@
 package com.biolab.ecommerce.DTOs;
 
 import com.biolab.ecommerce.entities.StatusPedido;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class PedidoDTO {
-
-    private long id;
+    private  long id;
     private Instant momento;
     private StatusPedido status;
-    private Long idcliente;
+    private long idCliente;
 
-    public PedidoDTO(Long idcliente) {
+    public PedidoDTO( long idCliente)//Só mantenho  como parametro oque eu quero que seja digitado pelo usuario
+    {
         this.momento = Instant.now();
-        this.status = StatusPedido.CRIANDO_PEDIDO;
-        this.idcliente = idcliente;
+        this.status = StatusPedido.AGUARDANDO_PAGAMENTO;
+        this.idCliente = idCliente;
     }
 }
